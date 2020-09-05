@@ -6,4 +6,4 @@ before_install:
     - docker build -t praneethkat/docker -f Dockerfile.dev .
     - 
 script:
-    - docker run praneethkat/docker npm run test -- --coverage
+    - docker run -e CI=true praneethkat/docker npm run test -- --coverage
