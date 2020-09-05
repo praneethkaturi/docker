@@ -3,7 +3,7 @@ services:
     - docker
 
 before_install:
-    - docker build -t praneethkat/docker .
+    - docker build -t praneethkat/docker -f Dockerfile.dev .
 script:
     - docker run -e CI=true praneethkat/docker npm run test -- --coverage
 
