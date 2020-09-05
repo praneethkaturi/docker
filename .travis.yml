@@ -1,0 +1,9 @@
+sudo: required
+services:
+    - docker
+
+before_install:
+    - docker build -t praneethkat/docker -f Dockerfile.dev .
+    - 
+script:
+    - docker run praneethkat/docker npm run test -- --coverage
